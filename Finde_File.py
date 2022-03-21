@@ -15,7 +15,7 @@ x = 0
 y = 0
 
 # موقع المجلد التي تريد العثور على الفات به
-file_op = input("أدخل القسم الذي تريد فحصه هنا:")
+file_op = input("pleas enter The file location: ")
 
 
 # أداة فحص المسار
@@ -32,7 +32,7 @@ formats = []
 
 path = file_op
 
-how_math = int(input('يرجى أدخال كم صيغة تريد البحث عنها ب الأرقام:'))
+how_math = int(input('pleas enter how math formats do you to add?'))
 
 # أداة سؤال عن المسارات
 while y < how_math:
@@ -50,22 +50,21 @@ for m in range(len(formats)):
 
 check = all(item in lsitoption for item in formats)
 
-copy_option = input("هل تريد عمل نسخة للمفات في مكان ما Y/N").strip().capitalize()
+copy_option = input("do you want to copy all files to file? Y/N").strip().capitalize()
 
 if copy_option == 'Y' or copy_option == 'Yes':
-    file_sy = input("يرجى وضع المسا هنا:")
+    file_sy = input("pleas enter the file location:")
     while not os.path.exists(file_sy):
-        file_sy = input("لم يتم العثور على المسا يرجى أعادة المحاولة")
+        file_sy = input("the file is not exists pleas try again:")
     else:
-        print("تم أيجاد المسا.")
+        print("ok the file is found.")
 
 else:
-    print("حسنا لا مشكلة")
+    print("ok no problem.")
     file_sy = ''
 # هنا لايعمل الكود في حال أدخل المستخدم صيغة خطأ
 if not check:
     print("the file format is not correct!!!\n pleas try again ^.^")
-
 
 else:
     for root, dirs, files in os.walk(path):
@@ -106,12 +105,12 @@ for file in files:
 
 Gbayt = bite_ / 1000000000
 MGbayt = bite_ /1000000
-options_By = input("هل تريد معرفة حجم الملفات التي تم العثور عليها? Y/N").strip().capitalize()
+options_By = input("Do you want to know the size of all files in your device? Y/N").strip().capitalize()
 if options_By == "Y" or options_By == "Yes":
     print("the size of all files is %.3f G and in MB is %.3f" % (Gbayt, MGbayt))
 else:
     print("ok(★‿★)")
-x_ = input("هل تريد معرفة عدد الملفات التي تم العتور عليها Y/N").strip().capitalize()
+x_ = input("Do you want to know how many files there are? Y/N ").strip().capitalize()
 if x_ == "Y" or x_ == "Yes":
     print(f"The number of files found is: {x} today is {ctime()}")
 else:
